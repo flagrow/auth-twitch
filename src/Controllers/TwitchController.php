@@ -27,11 +27,11 @@ class TwitchController extends AbstractOAuth2Controller
      */
     protected function getProvider($redirectUri)
     {
-        return new Twitch(
-            $this->settings->get('flagrow-twitch.client_id'),
-            $this->settings->get('flagrow-twitch.client_secret'),
-            $redirectUri
-        );
+        return new Twitch([
+            'clientId' => $this->settings->get('flagrow-twitch.client_id'),
+            'clientSecret' => $this->settings->get('flagrow-twitch.client_secret'),
+            'redirectUri' => $redirectUri
+        ]);
     }
 
     /**
