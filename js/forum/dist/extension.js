@@ -1,6 +1,6 @@
 'use strict';
 
-System.register('flagrow/patronage/main', ['flarum/extend', 'flarum/app', 'flarum/components/LogInButtons', 'flarum/components/LogInButton'], function (_export, _context) {
+System.register('flagrow/auth-twitch/main', ['flarum/extend', 'flarum/app', 'flarum/components/LogInButtons', 'flarum/components/LogInButton'], function (_export, _context) {
   "use strict";
 
   var extend, app, LogInButtons, LogInButton;
@@ -16,15 +16,15 @@ System.register('flagrow/patronage/main', ['flarum/extend', 'flarum/app', 'flaru
     }],
     execute: function () {
 
-      app.initializers.add('flagrow-patronage', function () {
+      app.initializers.add('flagrow-auth-twitch', function () {
         extend(LogInButtons.prototype, 'items', function (items) {
-          items.add('patronage', m(
+          items.add('twitch', m(
             LogInButton,
             {
-              className: 'Button patronage',
-              icon: 'patreon',
-              path: '/auth/patronage' },
-            app.translator.trans('flagrow-patronage.forum.log_in.with_patreon_button')
+              className: 'Button twitch',
+              icon: 'twitch',
+              path: '/auth/twitch' },
+            app.translator.trans('flagrow-twitch.forum.log_in_with_twitch_button')
           ));
         });
       });
