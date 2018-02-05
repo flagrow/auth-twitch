@@ -1,0 +1,33 @@
+{
+    "name": "flagrow/auth-twitch",
+    "description": "SSO for twitch.",
+    "keywords": [
+        "extension",
+        "flarum",
+        "flagrow",
+        "twitch"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniël Klabbers",
+            "email": "daniel@klabbers.email",
+            "homepage": "http://luceos.com"
+        }
+    ],
+    "require": {
+        "flarum/core": "^0.1.0-beta.7",
+        "depotwarehouse/oauth2-twitch": "^1.3.1"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Flagrow Twitch Auth"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Flagrow\\Twitch\\": "src/"
+        }
+    }
+}
