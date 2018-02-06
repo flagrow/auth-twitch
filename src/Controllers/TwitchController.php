@@ -2,7 +2,8 @@
 
 namespace Flagrow\Twitch\Controllers;
 
-use Depotwarehouse\OAuth2\Client\Twitch\Provider\Twitch;
+use Flagrow\Twitch\Provider\Twitch;
+use Flagrow\Twitch\Resource\TwitchUser;
 use Flarum\Forum\AuthenticationResponseFactory;
 use Flarum\Forum\Controller\AbstractOAuth2Controller;
 use Flarum\Settings\SettingsRepositoryInterface;
@@ -54,11 +55,13 @@ class TwitchController extends AbstractOAuth2Controller
     }
 
     /**
-     * @param ResourceOwnerInterface $resourceOwner
+     * @param ResourceOwnerInterface|TwitchUser $resourceOwner
      * @return array
      */
     protected function getSuggestions(ResourceOwnerInterface $resourceOwner)
     {
-        return [];
+        return [
+            'avatarUrl' => $resourceOwner->logo
+        ];
     }
 }
