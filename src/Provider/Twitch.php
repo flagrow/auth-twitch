@@ -76,16 +76,16 @@ class Twitch extends AbstractProvider
      *
      * @param  ResponseInterface $response
      * @param  array|string $data Parsed response data
-     * @throws \HttpRequestException
+     * @throws \Exception
      */
     protected function checkResponse(ResponseInterface $response, $data)
     {
         if ($response->getStatusCode() >= 400) {
-            throw new \HttpRequestException(Arr::get($data, 'message', $response->getReasonPhrase()));
+            throw new \Exception(Arr::get($data, 'message', $response->getReasonPhrase()));
         }
 
         if (isset($data['error'])) {
-            throw new \HttpRequestException(Arr::get($data, 'error', $response->getReasonPhrase()));
+            throw new \Exception(Arr::get($data, 'error', $response->getReasonPhrase()));
         }
     }
 

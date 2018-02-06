@@ -44,13 +44,13 @@ class TwitchController extends AbstractOAuth2Controller
     }
 
     /**
-     * @param ResourceOwnerInterface $resourceOwner
+     * @param ResourceOwnerInterface|TwitchUser $resourceOwner
      * @return array
      */
     protected function getIdentification(ResourceOwnerInterface $resourceOwner)
     {
         return [
-            'email' => $resourceOwner->getEmail()
+            'email' => $resourceOwner->email
         ];
     }
 
