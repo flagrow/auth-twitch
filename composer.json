@@ -28,6 +28,9 @@
                 "backgroundColor": "#f4f4f4",
                 "color": "#5f4bb6"
             }
+        },
+        "flagrow": {
+            "discuss": "https://discuss.flarum.org/d/8959-flagrow-twitch-tv-single-sign-on"
         }
     },
     "autoload": {
